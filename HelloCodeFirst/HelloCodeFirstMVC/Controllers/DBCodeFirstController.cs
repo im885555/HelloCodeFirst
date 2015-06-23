@@ -30,7 +30,7 @@ namespace HelloCodeFirstMVC.Controllers
 
         private void AddBlog(Blog blog)
         {
-            using (var db = new BloggingContext())
+            using (var db = new HelloContext())
             {
                 db.Blogs.Add(blog);
                 db.SaveChanges();
@@ -40,7 +40,7 @@ namespace HelloCodeFirstMVC.Controllers
         private List<Blog> GetBlogs()
         {
             List<Blog> blogs = new List<Blog>();
-            using (var db = new BloggingContext())
+            using (var db = new HelloContext())
             {
                 var query = from b in db.Blogs
                             select b;

@@ -1,8 +1,10 @@
-﻿using System;
+﻿using HelloCodeFirstMVC.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace HelloCodeFirstMVC.Controllers
 {
@@ -16,5 +18,12 @@ namespace HelloCodeFirstMVC.Controllers
             return View();
         }
 
+      
+
+        [Authorize]
+        public ActionResult Hrms()
+        {
+            return View();
+        }
     }
 }

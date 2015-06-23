@@ -5,14 +5,14 @@ namespace HelloCodeFirstMVC.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<HelloCodeFirstMVC.Models.BloggingContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<HelloCodeFirstMVC.Models.HelloContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(HelloCodeFirstMVC.Models.BloggingContext context)
+        protected override void Seed(HelloCodeFirstMVC.Models.HelloContext context)
         {
             //  This method will be called after migrating to the latest version.
 
