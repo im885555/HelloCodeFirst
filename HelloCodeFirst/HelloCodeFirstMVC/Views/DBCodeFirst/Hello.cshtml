@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Hello";
+    //var blogs = ViewData["blogs"] as List<Blog>;
+}
+
+<h2>Hello</h2>
+
+
+@foreach (var blog in Model)
+{ 
+    @blog.Name<br>
+}
+@*@using (Html.BeginForm()) {*@
+<form method="post" >
+    <div>
+        <label>
+            blog name:
+        </label>
+        <input type="text" name="name"  />        
+    </div>
+    <input type="submit" />
+</form>
+@*}*@
