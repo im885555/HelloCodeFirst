@@ -143,6 +143,8 @@
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebApiController\BaseApiController.cs" />
+    <Compile Include="WebApiController\HelloApiController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\DataBaseCodeFirst.mdf" />
