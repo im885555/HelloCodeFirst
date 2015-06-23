@@ -17,7 +17,7 @@ namespace HelloCodeFirstMVC.Controllers
             return View();
         }
 
-        //[HttpGet]
+
         public ActionResult Hello(String name)
         {
             if (name != null) {
@@ -27,15 +27,7 @@ namespace HelloCodeFirstMVC.Controllers
 
             return View(GetBlogs());
         }
-        //[HttpPost]
-        //public ActionResult Hello(String name)
-        //{
-       
-        //    var blog = new Blog { Name = name };
-        //    AddBlog(blog);
-         
-        //    return View(GetBlogs());
-        //}
+
         private void AddBlog(Blog blog)
         {
             using (var db = new BloggingContext())
