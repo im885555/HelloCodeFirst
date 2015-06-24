@@ -1,9 +1,11 @@
-﻿using System;
+﻿using HelloCodeFirstMVC.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Script.Serialization;
 
 namespace HelloCodeFirstMVC.WebApiController
 {
@@ -12,7 +14,6 @@ namespace HelloCodeFirstMVC.WebApiController
         
         public HelloApiController() 
         {
-           
             if (!User.Identity.IsAuthenticated) 
             {
                 throw new Exception("You are not authorized to use this page!");
@@ -21,9 +22,25 @@ namespace HelloCodeFirstMVC.WebApiController
 
  
         // GET api/helloapi
-        public IEnumerable<string> Get()
+        public IEnumerable<Blog> Get()
         {
-            return new string[] { "value1", "value2" };
+            List<Blog> blogs = new List<Blog>() { new Blog() { Name = "aaa" } };
+
+            List<Blog> blogs2 = new List<Blog>();
+
+            using (var db = new HelloContext())
+            {
+                var query = from b in db.Blogs
+                            select b;
+
+                blogs2 = query.ToList();
+            }
+
+           // var jsonSerialiser = new JavaScriptSerializer();
+
+            //string  json = JsonConvert.SerializeObject(blogs2);
+
+            return blogs2;
             //if (User.Identity.IsAuthenticated)
             //{
             //    return new string[] { "value1", "value2" };

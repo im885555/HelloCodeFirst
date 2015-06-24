@@ -15,8 +15,8 @@ namespace HelloCodeFirstMVC.Models
 
         public HelloContext()
             : base("name=DefaultConnection") 
-        { 
-
+        {
+            base.Configuration.ProxyCreationEnabled = false;
         }
 
     }
