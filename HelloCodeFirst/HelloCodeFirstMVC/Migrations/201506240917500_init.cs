@@ -3,24 +3,25 @@ namespace HelloCodeFirstMVC.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class addBlog : DbMigration
+    public partial class init : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.Employees",
+                "dbo.Comments",
                 c => new
                     {
-                        Email = c.String(nullable: false, maxLength: 128),
-                        Address = c.String(),
+                        CommentId = c.Int(nullable: false, identity: true),
+                        Author = c.String(),
+                        Text = c.String(),
                     })
-                .PrimaryKey(t => t.Email);
+                .PrimaryKey(t => t.CommentId);
             
         }
         
         public override void Down()
         {
-            DropTable("dbo.Employees");
+            DropTable("dbo.Comments");
         }
     }
 }

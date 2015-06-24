@@ -25,5 +25,10 @@ namespace HelloCodeFirstMVC.Controllers
         {
             return View();
         }
+
+        public ActionResult HelloReact()
+        {
+            return View();
+        }
     }
 }
