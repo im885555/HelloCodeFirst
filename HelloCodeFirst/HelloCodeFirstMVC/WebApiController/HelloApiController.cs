@@ -31,6 +31,7 @@ namespace HelloCodeFirstMVC.WebApiController
             using (var db = new HelloContext())
             {
                 var query = from b in db.Blogs
+                            orderby b.BlogId
                             select b;
 
                 blogs2 = query.ToList();

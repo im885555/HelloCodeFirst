@@ -283,7 +283,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\react\JSXTransformer-0.13.1.js" />
-    <None Include="Scripts\react\module\tutorial.jsx" />
+    <Content Include="Scripts\react\module\tutorial.js" />
     <Content Include="Scripts\react\react-0.13.1.js" />
     <Content Include="Scripts\react\react-0.13.1.min.js" />
     <Content Include="Scripts\react\react-with-addons-0.13.1.js" />

@@ -31,7 +31,7 @@
     },
     componentDidMount: function() {
         this.loadCommentsFromServer();
-        setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+        //setInterval(this.loadCommentsFromServer, this.props.pollInterval);
     },
     render: function() {
         return (
@@ -53,7 +53,7 @@ var CommentList = React.createClass({
               {comment.Text}
             </Comment>
           );
-        });            
+        });
         return (
           <div className="commentList">
             {commentNodes}
@@ -105,7 +105,7 @@ var data = [
   {author: "Jordan Walke", text: "This is *another* comment"}
 ];
 
-
+//
 React.render(
   <CommentBox url="/api/comment" pollInterval={2000} />,
   document.getElementById('content')

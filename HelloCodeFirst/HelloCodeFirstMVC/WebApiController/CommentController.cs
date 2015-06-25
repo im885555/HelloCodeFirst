@@ -10,18 +10,19 @@ namespace HelloCodeFirstMVC.WebApiController
 {
     public class CommentController : ApiController
     {
+        HelloContext db;
+
+        
+        public CommentController()
+        {
+            db = new HelloContext();
+        }
+
         // GET api/comment
         public IEnumerable<Comment> Get()
         {
-            List<Comment> comments = new List<Comment>();
-
-            using (var db = new HelloContext())
-            {
-                var query = from b in db.Comments
-                            select b;
-
-                comments = query.ToList();
-            }
+            List<Comment> comments = new List<Comment>();      
+            comments = db.Comments.ToList();
             return comments;
         }
 
@@ -32,9 +33,13 @@ namespace HelloCodeFirstMVC.WebApiController
         }
 
         // POST api/comment
-        public void Post([FromBody]string value)
+        public IEnumerable<Comment> Post([FromBody]Comment comment)
         {
-            String a ="";
+
+            db.Comments.Add(comment);
+            db.SaveChanges();
+
+            return db.Comments.ToList();
         }
 
         // PUT api/comment/5
